@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>RunForge - Gaming Compatibility</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #08080d;
+            color: white;
+        }
+
+        header {
+            background: #11111a;
+            padding: 20px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #292936;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: #8b5cf6;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 25px;
+            font-size: 15px;
+        }
+
+        nav a:hover {
+            color: #8b5cf6;
+        }
+
+        .hero {
+            min-height: 500px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 60px 20px;
+
+            background:
+                linear-gradient(rgba(8,8,13,0.75), rgba(8,8,13,0.95)),
+                url("images/gaming.jpg");
+
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero h1 {
+            font-size: 60px;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            color: #8b5cf6;
+        }
+
+        .hero p {
+            max-width: 650px;
+            color: #c5c5d0;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        .search-box {
+            margin-top: 30px;
+            width: 90%;
+            max-width: 600px;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 16px 20px;
+            border-radius: 10px;
+            border: 1px solid #333344;
+            background: #15151f;
+            color: white;
+            outline: none;
+            font-size: 16px;
+        }
+
+        .section {
+            padding: 70px 8%;
+        }
+
+        .section h2 {
+            font-size: 32px;
+            margin-bottom: 35px;
+        }
+
+        .games {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .game-card {
+            background: #12121b;
+            border: 1px solid #292936;
+            border-radius: 14px;
+            overflow: hidden;
+            transition: 0.3s;
+        }
+
+        .game-card:hover {
+            transform: translateY(-7px);
+            border-color: #8b5cf6;
+        }
+
+        .game-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .game-info {
+            padding: 20px;
+        }
+
+        .game-info h3 {
+            margin-bottom: 10px;
+            font-size: 21px;
+        }
+
+        .game-info p {
+            color: #aaaab7;
+            line-height: 1.5;
+            margin-bottom: 15px;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 6px 10px;
+            background: #242033;
+            color: #b99cff;
+            border-radius: 6px;
+            font-size: 13px;
+        }
+
+        .requirements {
+            margin-top: 12px;
+            color: #aaaab7;
+            font-size: 14px;
+        }
+
+        footer {
+            background: #11111a;
+            padding: 30px;
+            text-align: center;
+            color: #888894;
+            border-top: 1px solid #292936;
+        }
+
+        @media (max-width: 700px) {
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav a {
+                margin: 0 8px;
+            }
+
+            .hero h1 {
+                font-size: 42px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+
+    <div class="logo">
+        RunForge
+    </div>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#games">Games</a>
+        <a href="#about">About</a>
+    </nav>
+
+</header>
+
+
+<section class="hero" id="home">
+
+    <h1>
+        Can Your Laptop Run <span>It?</span>
+    </h1>
+
+    <p>
+        Find out which games your laptop can handle.
+        Explore system requirements, performance information
+        and recommended hardware.
+    </p>
+
+    <div class="search-box">
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Search for a game..."
+            onkeyup="searchGames()"
+        >
+
+    </div>
+
+</section>
+
+
+<section class="section" id="games">
+
+    <h2>Popular Games</h2>
+
+    <div class="games" id="gameContainer">
+
+
+        <!-- GTA V -->
+
+        <div class="game-card">
+
+            <img src="images/gta-v.jpg" alt="GTA V">
+
+            <div class="game-info">
+
+                <h3>Grand Theft Auto V</h3>
+
+                <p>
+                    Open-world action game from Rockstar Games.
+                </p>
+
+                <span class="badge">
+                    Recommended: 8GB RAM
+                </span>
+
+                <div class="requirements">
+
+                    CPU: Intel Core i5<br>
+                    RAM: 8GB<br>
+                    GPU: GTX 660<br>
+                    Storage: 110GB
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- MGSV -->
+
+        <div class="game-card">
+
+            <img src="images/mgsv.jpg" alt="Metal Gear Solid V">
+
+            <div class="game-info">
+
+                <h3>Metal Gear Solid V</h3>
+
+                <p>
+                    Tactical espionage action game.
+                </p>
+
+                <span class="badge">
+                    Recommended: 8GB RAM
+                </span>
+
+                <div class="requirements">
+
+                    CPU: Intel Core i5<br>
+                    RAM: 8GB<br>
+                    GPU: GTX 650<br>
+                    Storage: 28GB
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- HITMAN -->
+
+        <div class="game-card">
+
+            <img src="images/hitman.jpg" alt="Hitman">
+
+            <div class="game-info">
+
+                <h3>Hitman</h3>
+
+                <p>
+                    Stealth action game featuring Agent 47.
+                </p>
+
+                <span class="badge">
+                    Recommended: 8GB RAM
+                </span>
+
+                <div class="requirements">
+
+                    CPU: Intel Core i5<br>
+                    RAM: 8GB<br>
+                    GPU: GTX 660<br>
+                    Storage: 60GB
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- FAR CRY 4 -->
+
+        <div class="game-card">
+
+            <img src="images/far-cry-4.jpg" alt="Far Cry 4">
+
+            <div class="game-info">
+
+                <h3>Far Cry 4</h3>
+
+                <p>
+                    Open-world first-person shooter.
+                </p>
+
+                <span class="badge">
+                    Recommended: 8GB RAM
+                </span>
+
+                <div class="requirements">
+
+                    CPU: Intel Core i5<br>
+                    RAM: 8GB<br>
+                    GPU: GTX 560<br>
+                    Storage: 30GB
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<section class="section" id="about">
+
+    <h2>About RunForge</h2>
+
+    <p style="color:#aaaab7; max-width:700px; line-height:1.7;">
+
+        RunForge helps gamers discover games that are compatible
+        with their laptops and computers. Compare hardware
+        requirements before downloading or purchasing a game.
+
+    </p>
+
+</section>
+
+
+<footer>
+
+    <p>© 2026 RunForge. All rights reserved.</p>
+
+</footer>
+
+
+<script>
+
+function searchGames() {
+
+    let input =
+        document.getElementById("searchInput")
+        .value
+        .toLowerCase();
+
+    let cards =
+        document.querySelectorAll(".game-card");
+
+    cards.forEach(function(card) {
+
+        let gameName =
+            card.querySelector("h3")
+            .textContent
+            .toLowerCase();
+
+        if (gameName.includes(input)) {
+
+            card.style.display = "block";
+
+        } else {
+
+            card.style.display = "none";
+
+        }
+
+    });
+
+}
+
+</script>
+
+</body>
+</html>
